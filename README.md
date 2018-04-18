@@ -57,5 +57,5 @@ npm i 或者 yarn install
 ```bash
 npm run build:dll #第一次npm run dev时需运行此命令，使开发时编译更快
 npm run dev
-打开 http://localhost:8000
+打开 http://localhost:9000
 ```
