@@ -19,23 +19,23 @@ function Cpu ({
   return (<div className={styles.cpu}>
     <div className={styles.number}>
       <div className={styles.item}>
-        <p>usage</p>
+        <p>昨日收益</p>
         <p><CountUp
           end={usage}
-          suffix="GB"
+          suffix="元"
           {...countUpProps}
         /></p>
       </div>
       <div className={styles.item}>
-        <p>space</p>
+        <p>今日收益</p>
         <p><CountUp
           end={space}
-          suffix="GB"
+          suffix="元"
           {...countUpProps}
         /></p>
       </div>
       <div className={styles.item}>
-        <p>cpu</p>
+        <p>同比增长</p>
         <p><CountUp
           end={cpu}
           suffix="%"
@@ -44,7 +44,7 @@ function Cpu ({
       </div>
     </div>
     <ResponsiveContainer minHeight={300}>
-      <LineChart data={data} margin={{ left: -40 }}>
+      <LineChart data={data} margin={{ left: 0 }}>
         <XAxis dataKey="name" axisLine={{ stroke: color.borderBase, strokeWidth: 1 }} tickLine={false} />
         <YAxis axisLine={false} tickLine={false} />
         <CartesianGrid vertical={false} stroke={color.borderBase} strokeDasharray="3 3" />

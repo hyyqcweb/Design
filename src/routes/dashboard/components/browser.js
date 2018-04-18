@@ -17,10 +17,17 @@ const status = {
   4: {
     color: color.yellow,
   },
+  5: {
+    color: color.gray
+  }
 }
 
 function Browser ({ data }) {
   const columns = [
+    {
+      title:'tit',
+      dataIndex:'tit'
+    },
     {
       title: 'name',
       dataIndex: 'name',
@@ -32,7 +39,7 @@ function Browser ({ data }) {
       render: (text, it) => <Tag color={status[it.status].color}>{text}%</Tag>,
     },
   ]
-  return <Table pagination={false} showHeader={false} columns={columns} rowKey={(record, key) => key} dataSource={data} />
+  return <Table title={() => `快售罄商品`} pagination={false} showHeader={false} columns={columns} rowKey={(record, key) => key} dataSource={data} />
 }
 
 Browser.propTypes = {
