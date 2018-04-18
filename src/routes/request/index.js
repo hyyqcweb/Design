@@ -52,7 +52,7 @@ const requestOptions = [
     data: Mock.mock({
       name: '@cname',
       nickName: '@last',
-      phone: /^1[34578]\d{9}$/,
+      phone: /^1[3578]\d{9}$/,
       'age|11-99': 1,
       address: '@county(true)',
       isMale: '@boolean',

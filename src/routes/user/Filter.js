@@ -3,11 +3,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import moment from 'moment'
 import { FilterItem } from 'components'
-import { Form, Button, Row, Col, DatePicker, Input, Cascader, Switch } from 'antd'
+import { Form, Button, Row, Col, DatePicker, Input, Cascader, Switch ,LocaleProvider } from 'antd'
 import city from '../../utils/city'
 
 const { Search } = Input
 const { RangePicker } = DatePicker
+const FormItem = Form.Item;
+const dateFormat = 'YYYY/MM/DD';
 
 const ColProps = {
   xs: 24,
@@ -82,37 +84,43 @@ const Filter = ({
   return (
     <Row gutter={24}>
       <Col {...ColProps} xl={{ span: 4 }} md={{ span: 8 }}>
-        {getFieldDecorator('name', { initialValue: name })(<Search placeholder="Search Name" onSearch={handleSubmit} />)}
+        {getFieldDecorator('name', { initialValue: name })(<Search placeholder="搜索名字" onSearch={handleSubmit} />)}
       </Col>
       <Col {...ColProps} xl={{ span: 4 }} md={{ span: 8 }} id="addressCascader">
         {getFieldDecorator('address', { initialValue: address })(<Cascader
           style={{ width: '100%' }}
           options={city}
-          placeholder="Please pick an address"
+          placeholder="请选择地址"
           onChange={handleChange.bind(null, 'address')}
           getPopupContainer={() => document.getElementById('addressCascader')}
         />)}
       </Col>
       <Col {...ColProps} xl={{ span: 6 }} md={{ span: 8 }} sm={{ span: 12 }} id="createTimeRangePicker">
-        <FilterItem label="Createtime">
-          {getFieldDecorator('createTime', { initialValue: initialCreateTime })(<RangePicker
-            style={{ width: '100%' }}
-            onChange={handleChange.bind(null, 'createTime')}
-            getCalendarContainer={() => {
-              return document.getElementById('createTimeRangePicker')
-            }}
-          />)}
+        <FilterItem>
+          {getFieldDecorator('createTime', { initialValue: initialCreateTime })(
+            <LocaleProvider locale="zh-cn">
+              <RangePicker
+              style={{ width: '100%' }}
+              defaultValue={[moment('2018/01/01', dateFormat), moment('2018/01/01', dateFormat)]}
+              format={dateFormat}
+              onChange={handleChange.bind(null, 'createTime')}
+              getCalendarContainer={() => {
+                return document.getElementById('createTimeRangePicker')
+              }}
+            />
+            </LocaleProvider>
+          )}
         </FilterItem>
+
       </Col>
       <Col {...TwoColProps} xl={{ span: 10 }} md={{ span: 24 }} sm={{ span: 24 }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap' }}>
           <div>
-            <Button type="primary" className="margin-right" onClick={handleSubmit}>Search</Button>
-            <Button onClick={handleReset}>Reset</Button>
+            <Button type="primary" className="margin-right" onClick={handleSubmit}>搜索</Button>
+            <Button onClick={handleReset}>重置</Button>
           </div>
           <div className="flex-vertical-center">
-            <Switch className="ant-switch-large" style={{ marginRight: 16 }} defaultChecked={isMotion} onChange={switchIsMotion} checkedChildren="Motion" unCheckedChildren="Motion" />
-            <Button type="ghost" onClick={onAdd}>Create</Button>
+            <Button type="ghost" onClick={onAdd}>增加</Button>
           </div>
         </div>
       </Col>

@@ -34,7 +34,7 @@ const User = ({
     visible: modalVisible,
     maskClosable: false,
     confirmLoading: loading.effects[`user/${modalType}`],
-    title: `${modalType === 'create' ? 'Create User' : 'Update User'}`,
+    title: `${modalType === 'create' ? '创建供应商' : '修改供应商'}`,
     wrapClassName: 'vertical-center-modal',
     onOk (data) {
       dispatch({
@@ -142,9 +142,9 @@ const User = ({
         selectedRowKeys.length > 0 &&
         <Row style={{ marginBottom: 24, textAlign: 'right', fontSize: 13 }}>
           <Col>
-            {`Selected ${selectedRowKeys.length} items `}
-            <Popconfirm title="Are you sure delete these items?" placement="left" onConfirm={handleDeleteItems}>
-              <Button type="primary" style={{ marginLeft: 8 }}>Remove</Button>
+            {`选择了 ${selectedRowKeys.length} 个列表 `}
+            <Popconfirm title="你确定删除这些选项吗?" placement="left" onConfirm={handleDeleteItems}>
+              <Button type="primary" style={{ marginLeft: 8 }}>删除</Button>
             </Popconfirm>
           </Col>
         </Row>

@@ -11,7 +11,7 @@ let database = [
   {
     id: '2',
     bpid: '1',
-    name: 'Users',
+    name: '供货商管理',
     icon: 'user',
     route: '/user',
   },

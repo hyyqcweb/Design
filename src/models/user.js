@@ -79,6 +79,7 @@ export default modelExtend(pageModel, {
       } else {
         throw data
       }
+
     },
 
     * update ({ payload }, { select, call, put }) {
