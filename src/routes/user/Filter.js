@@ -17,7 +17,9 @@ const ColProps = {
   style: {
     marginBottom: 16,
   },
+
 }
+const size = "large"
 
 const TwoColProps = {
   ...ColProps,
@@ -84,43 +86,35 @@ const Filter = ({
   return (
     <Row gutter={24}>
       <Col {...ColProps} xl={{ span: 4 }} md={{ span: 8 }}>
-        {getFieldDecorator('name', { initialValue: name })(<Search placeholder="搜索名字" onSearch={handleSubmit} />)}
+        {getFieldDecorator('name', { initialValue: name })(<Search placeholder="搜索名字" size="large" onSearch={handleSubmit} />)}
       </Col>
       <Col {...ColProps} xl={{ span: 4 }} md={{ span: 8 }} id="addressCascader">
         {getFieldDecorator('address', { initialValue: address })(<Cascader
           style={{ width: '100%' }}
+          size="large"
           options={city}
           placeholder="请选择地址"
           onChange={handleChange.bind(null, 'address')}
           getPopupContainer={() => document.getElementById('addressCascader')}
         />)}
       </Col>
-      <Col {...ColProps} xl={{ span: 6 }} md={{ span: 8 }} sm={{ span: 12 }} id="createTimeRangePicker">
-        <FilterItem>
-          {getFieldDecorator('createTime', { initialValue: initialCreateTime })(
-            <LocaleProvider locale="zh-cn">
-              <RangePicker
-              style={{ width: '100%' }}
-              defaultValue={[moment('2018/01/01', dateFormat), moment('2018/01/01', dateFormat)]}
-              format={dateFormat}
-              onChange={handleChange.bind(null, 'createTime')}
-              getCalendarContainer={() => {
-                return document.getElementById('createTimeRangePicker')
-              }}
-            />
-            </LocaleProvider>
+      <Col {...ColProps} xl={{span: 6}} md={{span: 8}} sm={{span: 12}} id="createTimeRangePicker">
+        <FormItem>
+          {getFieldDecorator('createTime', {initialValue: initialCreateTime})(
+            <RangePicker style={{width: '100%'}}
+                         size="large"
+                         onChange={handleChange.bind(null, 'createTime')}/>
           )}
-        </FilterItem>
-
+        </FormItem>
       </Col>
       <Col {...TwoColProps} xl={{ span: 10 }} md={{ span: 24 }} sm={{ span: 24 }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap' }}>
           <div>
-            <Button type="primary" className="margin-right" onClick={handleSubmit}>搜索</Button>
-            <Button onClick={handleReset}>重置</Button>
+            <Button type="primary" className="margin-right" size={size} onClick={handleSubmit}>搜索</Button>
+            <Button size={size} onClick={handleReset}>重置</Button>
           </div>
           <div className="flex-vertical-center">
-            <Button type="ghost" onClick={onAdd}>增加</Button>
+            <Button type="ghost" size={size} onClick={onAdd}>增加</Button>
           </div>
         </div>
       </Col>

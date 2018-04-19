@@ -80,7 +80,7 @@ const queryArray = (array, key, keyAlias = 'key') => {
 
 const NOTFOUND = {
   message: 'Not Found',
-  documentation_url: 'http://localhost:8000/request',
+  documentation_url: 'http://localhost:9000/request',
 }
 
 module.exports = {
@@ -178,7 +178,7 @@ module.exports = {
   [`POST ${apiPrefix}/user`] (req, res) {
     const newData = req.body
     newData.createTime = Mock.mock('@now')
-    newData.avatar = newData.avatar || Mock.Random.image('100x100', Mock.Random.color(), '#757575', 'png', newData.nickName.substr(0, 1))
+    //newData.avatar = newData.avatar || Mock.Random.image('100x100', Mock.Random.color(), '#757575', 'png', newData.nickName.substr(0, 1))
     newData.id = Mock.mock('@id')
 
     database.unshift(newData)
