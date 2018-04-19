@@ -6,6 +6,7 @@ import styles from './index.less'
 const Detail = ({ userDetail }) => {
   const { data } = userDetail
   const content = []
+  // debugger
   for (let key in data) {
     if ({}.hasOwnProperty.call(data, key)) {
       content.push(<div key={key} className={styles.item}>
@@ -15,11 +16,20 @@ const Detail = ({ userDetail }) => {
     }
   }
   return (<div className="content-inner">
-    <div className={styles.content}>
-      {content}
-    </div>
+      <ul className={styles.container}>
+        <li>序号:<span>{data.id}</span></li>
+        <li>是否成功: <span>{data.statusCode}</span></li>
+        <li>名字: <span>{data.name}</span></li>
+        <li>年龄: <span>{data.age}</span></li>
+        <li>电话号码: <span>{data.phone}</span></li>
+        <li>邮箱: <span>{data.email}</span></li>
+        <li>地址: <span>{data.address}</span></li>
+        <li>创建时间: <span>{data.createTime}</span></li>
+      </ul>
+
   </div>)
 }
+
 
 Detail.propTypes = {
   userDetail: PropTypes.object,

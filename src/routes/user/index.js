@@ -36,6 +36,7 @@ const User = ({
     confirmLoading: loading.effects[`user/${modalType}`],
     title: `${modalType === 'create' ? '创建供应商' : '修改供应商'}`,
     wrapClassName: 'vertical-center-modal',
+    
     onOk (data) {
       dispatch({
         type: `user/${modalType}`,

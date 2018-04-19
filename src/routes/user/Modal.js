@@ -16,6 +16,8 @@ const formItemLayout = {
 
 const modal = ({
   item = {},
+  okText="确认",
+  canceText="取消",
   onOk,
   form: {
     getFieldDecorator,
