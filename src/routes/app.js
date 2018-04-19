@@ -10,6 +10,7 @@ import { BackTop, Layout } from 'antd'
 import { classnames, config } from 'utils'
 import { Helmet } from 'react-helmet'
 import { withRouter } from 'dva/router'
+// import { config } from 'utils'
 import Error from './error'
 import '../themes/index.less'
 import './app.less'
@@ -94,9 +95,10 @@ const App = ({
     <div>
       <Loader fullScreen spinning={loading.effects['app/query']} />
       <Helmet>
-        <title>ANTD ADMIN</title>
+        <title>商店后台管理系统</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="icon" href={logo} type="image/x-icon" />
+        <link rel="icon" href="../public/logo.svg" type="image/x-icon" />
+        {/*<link rel="shortcut icon" href={config.logo} type="image/x-icon">*/}
         {iconFontJS && <script src={iconFontJS} />}
         {iconFontCSS && <link rel="stylesheet" href={iconFontCSS} />}
       </Helmet>
