@@ -64,6 +64,15 @@ const Routers = function ({ history, app }) {
       path: '/post',
       models: () => [import('./models/post')],
       component: () => import('./routes/post/'),
+    },{
+      path: '/exception/404',
+      component:() => import('./routes/exception/404')
+    },{
+      path: '/exception/403',
+      component:() => import('./routes/exception/403')
+    },{
+      path: '/exception/500',
+      component:() => import('./routes/exception/500')
     }
   ]
 

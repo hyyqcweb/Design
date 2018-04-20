@@ -158,7 +158,7 @@ export default class RequestPage extends React.Component {
       <div className="content-inner">
         <Row gutter={32}>
           <Col {...colProps}>
-            <Card title="Request"
+            <Card title="模拟请求"
               style={{
                 overflow: 'visible',
               }}
@@ -181,11 +181,6 @@ export default class RequestPage extends React.Component {
                   })}
                 </Select>
                 <Button type="primary" style={{ width: 100, marginLeft: 16 }} onClick={this.handleRequest}>发送</Button>
-              </div>
-              <div className={styles.params}>
-                <div className={styles.label}>Params：</div>
-                <Input disabled value={currntRequest.data ? JSON.stringify(currntRequest.data) : 'null'} size="large" style={{ width: 200 }} placeholder="null" />
-                <div style={{ flex: 1, marginLeft: 16 }}>{currntRequest.desc}</div>
               </div>
               <div className={styles.result}>
                 {result}

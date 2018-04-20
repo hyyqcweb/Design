@@ -122,7 +122,17 @@ const AirportCoordComponent = () => {
   }
 
   let BJData = [
-    [{ name: '北京' }, { name: '上海', value: 95 }],
+    [{ name: '北京' }, { name: '台州', value: 200 }],
+    [{ name: '北京' }, { name: '郑州', value: 190 }],
+    [{ name: '北京' }, { name: '武汉', value: 180 }],
+    [{ name: '北京' }, { name: '杭州', value: 170 }],
+    [{ name: '北京' }, { name: '石家庄', value: 160 }],
+    [{ name: '北京' }, { name: '成都', value: 150 }],
+    [{ name: '北京' }, { name: '深圳', value: 140 }],
+    [{ name: '北京' }, { name: '南京', value: 130 }],
+    [{ name: '北京' }, { name: '鄂尔多斯', value: 120 }],
+    [{ name: '北京' }, { name: '西安', value: 110 }],
+    [{ name: '北京' }, { name: '上海', value: 100 }],
     [{ name: '北京' }, { name: '广州', value: 90 }],
     [{ name: '北京' }, { name: '大连', value: 80 }],
     [{ name: '北京' }, { name: '南宁', value: 70 }],
@@ -262,8 +272,7 @@ const AirportCoordComponent = () => {
   let option = {
     backgroundColor: '#404a59',
     title: {
-      text: '模拟迁徙',
-      subtext: '数据纯属虚构',
+      text: '全国店铺',
       left: 'center',
       textStyle: {
         color: '#fff',
@@ -307,7 +316,6 @@ const AirportCoordComponent = () => {
   return (
     <div className="examples">
       <div className="parent">
-        <label> render a airport chart. </label>
         <ReactEcharts
           option={option}
           style={{ height: '700px', width: '100%' }}

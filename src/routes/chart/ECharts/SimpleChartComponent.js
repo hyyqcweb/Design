@@ -5,13 +5,13 @@ import './theme/macarons.js'
 const SimpleChartComponent = () => {
   const option = {
     title: {
-      text: '堆叠区域图',
+      text: '销售走势图（万）',
     },
     tooltip: {
       trigger: 'axis',
     },
     legend: {
-      data: ['邮件营销', '联盟广告', '视频广告'],
+      data: ['超市一周走势'],
     },
     toolbox: {
       feature: {
@@ -38,25 +38,11 @@ const SimpleChartComponent = () => {
     ],
     series: [
       {
-        name: '邮件营销',
+        name: '超市一周走势',
         type: 'line',
         stack: '总量',
         areaStyle: { normal: {} },
-        data: [120, 132, 101, 134, 90, 230, 210],
-      },
-      {
-        name: '联盟广告',
-        type: 'line',
-        stack: '总量',
-        areaStyle: { normal: {} },
-        data: [220, 182, 191, 234, 290, 330, 310],
-      },
-      {
-        name: '视频广告',
-        type: 'line',
-        stack: '总量',
-        areaStyle: { normal: {} },
-        data: [150, 232, 201, 154, 190, 330, 410],
+        data: [10, 15, 18, 13, 14, 25, 28],
       },
     ],
   }
@@ -67,17 +53,13 @@ const SimpleChartComponent = () => {
   return (
     <div className="examples">
       <div className="parent">
-        <label> render a Simple echart With <strong>option and height</strong>: </label>
+        <label style={{marginTop:50}}></label>
         <ReactEcharts
           option={option}
           style={{ height: '350px', width: '100%' }}
           className="react_for_echarts"
           theme="macarons"
         />
-        <label> code below: </label>
-        <pre>
-          <code>{code}</code>
-        </pre>
       </div>
     </div>
   )

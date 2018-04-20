@@ -8,76 +8,12 @@ const RadioGroup = Radio.Group
 
 const chartList = [
   {
-    label: 'SimpleChart',
+    label: '销售走势',
     value: 'simple',
   },
   {
-    label: 'ChartShowLoading',
-    value: 'loading',
-  },
-  {
-    label: 'ChartAPI',
-    value: 'api',
-  },
-  {
-    label: 'ChartWithEvent',
-    value: 'events',
-  },
-  {
-    label: 'ThemeChart',
-    value: 'theme',
-  },
-  {
-    label: 'DynamicChart',
-    value: 'dynamic',
-  },
-  {
-    label: 'MapChart',
-    value: 'map',
-  },
-  {
-    label: 'AirportCoord',
+    label: '全国店铺预览',
     value: 'airport',
-  },
-  {
-    label: 'Graph',
-    value: 'graph',
-  },
-  {
-    label: 'Calendar',
-    value: 'calendar',
-  },
-  {
-    label: 'Treemap',
-    value: 'treemap',
-  },
-  {
-    label: 'Gauge',
-    value: 'gauge',
-  },
-  {
-    label: 'GCalendar',
-    value: 'gcalendar',
-  },
-  {
-    label: 'LunarCalendar',
-    value: 'lunar',
-  },
-  {
-    label: 'Liquidfill',
-    value: 'liquid',
-  },
-  {
-    label: 'BubbleGradient',
-    value: 'BubbleGradientComponent',
-  },
-  {
-    label: 'TransparentBar3D',
-    value: 'TransparentBar3DComPonent',
-  },
-  {
-    label: 'MoonComponent',
-    value: 'MoonComponent',
   },
 ]
 
@@ -96,12 +32,9 @@ class Chart extends React.Component {
   }
   render () {
     return (<Page inner id="EChartsMain">
-      <RadioGroup options={chartList} defaultValue="dynamic" onChange={this.handleRadioGroupChange} />
+      <RadioGroup options={chartList} defaultValue="airport" onChange={this.handleRadioGroupChange} />
       <div className={styles.chart}>
         <EchartsComponent type={this.state.type} />
-      </div>
-      <div style={{ pading: 24, marginTop: 24 }}>
-         All demos from <a href="https://github.com/hustcc/echarts-for-react">https://github.com/hustcc/echarts-for-react</a>
       </div>
     </Page>)
   }

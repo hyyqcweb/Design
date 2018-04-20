@@ -8,7 +8,7 @@ import DescriptionList from './DescriptionList'
 import Loader from './Loader'
 import * as MyLayout from './Layout/index.js'
 import Page from './Page'
-
+import Exception from './Exception'
 import layer from './layer'
 
 export {
@@ -22,5 +22,6 @@ export {
   Loader,
   layer,
   Page,
-  DescriptionList
+  DescriptionList,
+  Exception
 }
