@@ -7,6 +7,9 @@ export default modelExtend(pageModel, {
 
   namespace: 'post',
 
+  state:{
+    selectedRowKeys: [],
+  },
   subscriptions: {
     setup ({ dispatch, history }) {
       history.listen((location) => {

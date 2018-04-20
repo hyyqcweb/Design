@@ -2,7 +2,7 @@ const { config, posts } = require('./common')
 
 const { apiPrefix } = config
 let database = posts;
-debugger
+// debugger
 
 module.exports = {
 

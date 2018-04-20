@@ -69,14 +69,7 @@ const Index = ({
 
 
   return (<Page inner>
-    <Tabs activeKey={query.status === String(EnumPostStatus.UNPUBLISH) ? String(EnumPostStatus.UNPUBLISH) : String(EnumPostStatus.PUBLISHED)} onTabClick={handleTabClick}>
-      <TabPane tab="Publised" key={String(EnumPostStatus.PUBLISHED)}>
         <List {...listProps} />
-      </TabPane>
-      <TabPane tab="Unpublish" key={String(EnumPostStatus.UNPUBLISH)}>
-        <List {...listProps} />
-      </TabPane>
-    </Tabs>
   </Page>)
 }
 

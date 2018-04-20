@@ -11,14 +11,14 @@ let database = [
   {
     id: '2',
     bpid: '1',
-    name: '供货商管理',
+    name: '员工管理',
     icon: 'user',
     route: '/user',
   },
   {
     id: '7',
     bpid: '1',
-    name: '员工管理',
+    name: '商品查看',
     icon: 'setting',
     route: '/post',
   },

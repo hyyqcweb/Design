@@ -34,9 +34,9 @@ const User = ({
     visible: modalVisible,
     maskClosable: false,
     confirmLoading: loading.effects[`user/${modalType}`],
-    title: `${modalType === 'create' ? '创建供应商' : '修改供应商'}`,
+    title: `${modalType === 'create' ? '创建员工' : '修改员工'}`,
     wrapClassName: 'vertical-center-modal',
-    
+
     onOk (data) {
       dispatch({
         type: `user/${modalType}`,

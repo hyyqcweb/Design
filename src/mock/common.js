@@ -38,13 +38,15 @@ const posts = Mock.mock({
       title: '@title',
       author: '@cname',
       categories: '@boolean',
-      'tags|11-60': 1,
+      'tags|1-3': 1,
       'views|0-1': 0,
       comments:/^1[3578]\d{9}$/,
       visibility: '@county(true)',
-      image () {
-        return Mock.Random.image('100x100', Mock.Random.color(), '#757575', 'png', this.author.substr(0, 1))
-      },
+      date:'@datetime',
+      // image () {
+      //   return Mock.Random.image('100x100', Mock.Random.color(), '#757575', 'png', this.author.substr(0, 1))
+      // },
+      'image|1-12': 1,
     },
   ],
 }).data
