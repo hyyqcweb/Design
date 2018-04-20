@@ -36,17 +36,12 @@ const posts = Mock.mock({
       },
       'status|1-2': 1,
       title: '@title',
-      author: '@last',
-      categories: '@word',
-      tags: '@word',
-      'views|10-200': 1,
-      'comments|10-200': 1,
-      visibility: () => {
-        return Mock.mock('@pick(["Public",'
-          + '"Password protected", '
-          + '"Private"])')
-      },
-      date: '@dateTime',
+      author: '@cname',
+      categories: '@boolean',
+      'tags|11-60': 1,
+      'views|0-1': 0,
+      comments:/^1[3578]\d{9}$/,
+      visibility: '@county(true)',
       image () {
         return Mock.Random.image('100x100', Mock.Random.color(), '#757575', 'png', this.author.substr(0, 1))
       },

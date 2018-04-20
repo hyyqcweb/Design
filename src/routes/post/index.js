@@ -22,6 +22,15 @@ const Index = ({
   location.query = queryString.parse(location.search)
   const { query, pathname } = location
 
+  const handleRefresh = (newQuery) => {
+    dispatch(routerRedux.push({
+      pathname,
+      search: queryString.stringify({
+        ...query,
+        ...newQuery,
+      }),
+    }))
+  }
   const listProps = {
     pagination,
     dataSource: list,
@@ -35,6 +44,17 @@ const Index = ({
           pageSize: page.pageSize,
         }),
       }))
+    },
+    onDeleteItem (id) {
+      dispatch({
+        type: 'post/delete',
+        payload: id,
+      })
+        .then(() => {
+          handleRefresh({
+            page: (list.length === 1 && pagination.current > 1) ? pagination.current - 1 : pagination.current,
+          })
+        })
     },
   }
 

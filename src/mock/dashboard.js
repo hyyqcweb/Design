@@ -24,39 +24,6 @@ const Dashboard = Mock.mock({
       },
     ],
   },
-  browser: [
-    {
-      name: 'Google Chrome',
-      percent: 43.3,
-      status: 1,
-    },
-    {
-      name: 'Mozilla Firefox',
-      percent: 33.4,
-      status: 2,
-    },
-    {
-      name: 'Apple Safari',
-      percent: 34.6,
-      status: 3,
-    },
-    {
-      name: 'Internet Explorer',
-      percent: 12.3,
-      status: 4,
-    },
-    {
-      name: 'Opera Mini',
-      percent: 3.3,
-      status: 5,
-    },
-    {
-      name: 'Chromium',
-      percent: 2.53,
-      status: 1,
-    },
-  ],
-
   'completed|12': [
     {
       'name|+1': 2008,

@@ -34,7 +34,7 @@ const EnumRoleType = {
 
 const userPermission = {
   DEFAULT: {
-    visit: ['1', '2', '21', '7', '5', '51', '52', '53'],
+    visit: ['1', '2','21', '7', '5', '51', '52', '53'],
     role: EnumRoleType.DEFAULT,
   },
   ADMIN: {
@@ -161,7 +161,6 @@ module.exports = {
         })
       }
     }
-
     res.status(200).json({
       data: newData.slice((page - 1) * pageSize, page * pageSize),
       total: newData.length,

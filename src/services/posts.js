@@ -10,3 +10,10 @@ export function query (params) {
     data: params,
   })
 }
+export function remove (params) {
+  return request({
+    url: posts,
+    method: 'delete',
+    data: params,
+  })
+}
